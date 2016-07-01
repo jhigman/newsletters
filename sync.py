@@ -21,6 +21,7 @@ def find_pdfs(url, prefix, filenames):
     for link in soup.find_all('a'):
         if link.get('href').endswith('.pdf'):
             filename = prefix + ' : ' + link.text + '.pdf'
+            filename = filename.replace('/','-')
             if filename not in filenames:
                 save_to_dropbox(prefix, filename, link.get('href'))
                 print('saved ' + filename)
