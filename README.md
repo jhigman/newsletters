@@ -6,6 +6,7 @@ Find newsletters on the West Bridgford schools sites and copy them to Dropbox
 
 The code relies on some libraries : requests, BeautifulSoup, dropbox:
 
+    sudo apt-get install python3-pip
     sudo pip3 install beautifulsoup4
     sudo pip3 install dropbox
 

@@ -17,7 +17,7 @@ def save_to_dropbox(prefix, path, url):
 
 def find_pdfs(url, prefix, filenames):
     response = requests.get(url)
-    soup = bs4.BeautifulSoup(response.text)
+    soup = bs4.BeautifulSoup(response.text, "html5lib")
     for link in soup.find_all('a'):
         if link.get('href').endswith('.pdf'):
             filename = prefix + ' : ' + link.text + '.pdf'
