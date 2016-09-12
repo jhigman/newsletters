@@ -31,6 +31,5 @@ def find_pdfs(url, prefix, filenames):
 filenames = list_dropbox()
 
 find_pdfs('http://www.wbjs.com/stream/newsletters/full/1/-//', 'JUNIORS', filenames)
-find_pdfs('http://www.westbridgfordinfants.co.uk/stream/newsletters/full/1/-//', 'INFANTS', filenames)
 
 
