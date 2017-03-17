@@ -15,3 +15,7 @@ You'll need to setup a Dropbox access token in the environment:
     export DROPBOX_ACCESS_TOKEN=[access token]
 
 
+Put this in the crontab:
+
+    01 * * * * . /etc/profile; /home/ubuntu/newsletters/sync.py > /tmp/newsletters.log 2>&1
+
