@@ -4,6 +4,7 @@ import os
 import dropbox
 import requests
 import bs4
+from datetime import date
 
 def list_dropbox():
     dropbox_access_token = os.environ['DROPBOX_ACCESS_TOKEN']
@@ -20,7 +21,7 @@ def find_pdfs(url, prefix, filenames):
     soup = bs4.BeautifulSoup(response.text, "html5lib")
     for link in soup.find_all('a'):
         if link.get('href').endswith('.pdf'):
-            filename = prefix + ' : ' + link.text + '.pdf'
+            filename = prefix + ' ' + str(date.today().year) + ' : ' + link.text + '.pdf'
             filename = filename.replace('/','-')
             if filename not in filenames:
                 save_to_dropbox(prefix, filename, link.get('href'))
